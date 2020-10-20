@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { getCharacters } from '../../services/hey-arnold-api';
 
 
@@ -18,10 +19,13 @@ export default class CharacterList extends Component {
   }
   render() {
     const { characters } = this.state;
+
     const eachCharacter = characters.map(character => (
-      <li key={character._id}>
-        <a href={character}>{character.name}</a>
-      </li>
+      <Link key={character._id} to={`/${character._id}`}>
+        <li key={character._id}>
+          <p href={character}>{character.name}</p>
+        </li>
+      </Link>
     ));
 
     return (
