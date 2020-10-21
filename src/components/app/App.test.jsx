@@ -1,6 +1,5 @@
-
-
 describe('it passes!', () => {
-  expect(1).toEqual(1);
+  it('passes node ci', () => {
+    expect('one').toEqual('one');
+  });
 });
-
